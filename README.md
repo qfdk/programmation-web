@@ -37,4 +37,13 @@ git push -u origin main
 
 ### ------- 老师同学分割线 -------
 git clone https://github.com/qfdk/programmation-web.git
+
+# 老师把笔记推(push)到网站
+# 同学需要拉取(pull)笔记
+# 进入到 对应的文件夹，然后执行拉取命令
+cd programmation-web
+
+# 拉取命令 ？
+git pull
+# work-in-progress (WIP)
 ```
