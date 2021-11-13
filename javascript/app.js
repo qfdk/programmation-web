@@ -1,5 +1,5 @@
 const table = [1, 2, 3, 4, 5];
-index: 0,1,2,3,4
+// index: 0,1,2,3,4
 var x = 2;
 // table[x]
 
