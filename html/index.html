@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,33 +11,44 @@
 </head>
 
 <body>
-<div class="container">
-    <h3>TODO LIST</h3>
+    <div class="container">
+        <h3>TODO LIST</h3>
 
-    <button id="myButton" class="btn btn-primary">我的按钮</button>
-    <input type="text" id="myInput" class="form-control" value="">
+        <button id="myButton" class="btn btn-primary">我的按钮</button>
+        <input type="text" id="myInput" class="form-control" value="">
 
-    <ul id="myUl">
-        <li>test</li>
-    </ul>
-</div>
+        <ul id="myUl">
+            <li>test</li>
+        </ul>
+        <button id="random" class="btn btn-primary">抽签</button>
+    </div>
 
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#myButton').on('click', () => {
-            alert(1);
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myButton').on('click', () => {
+                alert(1);
+            });
+            $('#myInput').on('change', () => {
+            });
+            for (let i = 0; i < 10; i++) {
+                $('#myUl').append(`<li>测试</li>`);
+            }
+
+            function getRandomIntInclusive(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+
+            }
+            $('#random').on('click', () => {
+                alert(getRandomIntInclusive(1, 5));
+            });
         });
-        $('#myInput').on('change', () => {
-        });
-        for (let i = 0; i < 10; i++) {
-            $('#myUl').append(`<li>测试</li>`);
-        }
-    });
-</script>
+    </script>
 </body>
 
 </html>
