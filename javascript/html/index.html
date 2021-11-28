@@ -9,8 +9,13 @@
 </head>
 <body>
 <h3>JS</h3>
-<br/><a href="javascript:helloWorld();">cliquez ici</a>
-<br/><a onMouseOver="鼠标();">鼠标上面了</a>
+<br/><a href="javascript:alert(1);">cliquez ici</a>
+<input type="text" onBlur="alert(2);" value="" disabled>
+<button type="button" id="myButton" onclick="alert('Hello world!')">
+    Click Me!
+</button>
+
+<!--<br/><a onMouseOver="鼠标();">鼠标上面了</a>-->
 
 <div id="container">
     <h1>ceci est une division</h1>
@@ -20,4 +25,5 @@
 
 </body>
 <script src="./app.js"></script>
+
 </html>
