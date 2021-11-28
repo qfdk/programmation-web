@@ -23,11 +23,13 @@ module.exports = class Person {
         console.log(`${this.name}===> 开(${car.mark})车去: ${location}`)
     }
 
+    // public bool happy(param)
+
     happy(action) {
         console.log(`${this.name}===> ${action}`);
         // console.log(`${this.name}===> 唱歌`);
     }
-
+    
     买车(car) {
         this.cars.push(car);
         console.log(`${this.name}===>买车了:${car.mark}`)
