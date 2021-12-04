@@ -16,6 +16,8 @@ $(document).ready(function () {
             //放进表格
             todolist.push(inputValue);
             console.log(todolist);
+            //页面显示
+            $('#myUl').append(`<li>${inputValue}</li>`);
         }
         
     });
