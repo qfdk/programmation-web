@@ -1,11 +1,26 @@
 $(document).ready(function () {
-    // 抽签
+
+    
+    const todolist = [];
+    
+//输入文字、点击按钮、放进表格
+    
+
+    //点击按钮
     $('#myButton').on('click', () => {
+        //获取输入文字
         var inputValue = $('#myInput').val();
+        //判断输入文字长度
         if (inputValue.length > 0) {
-            alert(inputValue);
+            //alert(inputValue);
+            //放进表格
+            todolist.push(inputValue);
+            console.log(todolist);
         }
+        
     });
+
+    
 
     // ajax 请求
     $('#ajaxBtn').on('click', () => {
@@ -20,14 +35,20 @@ $(document).ready(function () {
         });
     });
 
+
+   
+    
     $('#myInput').on('input', () => {
         console.log($('#myInput').val());
     });
 
     for (let i = 0; i < 10; i++) {
-        $('#myUl').append(`<li>测试</li>`);
+        
+       // $('#myUl').append(`<li>测试</li>`);
     }
+    
 
+    // 抽签
     function getRandomIntInclusive(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -38,6 +59,7 @@ $(document).ready(function () {
     $('#random').on('click', () => {
         alert(getRandomIntInclusive(1, 5));
     });
+
 
     // function createHttpRequest() {
     //     var req = null;
