@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    
+
     const todolist = [];
-    
-//输入文字、点击按钮、放进表格
-    
+
+    //输入文字、点击按钮、放进表格
+
 
     //点击按钮
     $('#myButton').on('click', () => {
@@ -19,10 +19,10 @@ $(document).ready(function () {
             //页面显示
             $('#myUl').append(`<li>${inputValue}</li>`);
         }
-        
+
     });
 
-    
+
 
     // ajax 请求
     $('#ajaxBtn').on('click', () => {
@@ -37,18 +37,23 @@ $(document).ready(function () {
         });
     });
 
+    $.get('./data.json').then(response => {
+        console.log(response)
+        for (const element of response) {
+          $('#myUl').append(`<li>${element}</li>`);
+        }
+    });
 
-   
-    
+
     $('#myInput').on('input', () => {
         console.log($('#myInput').val());
     });
 
     for (let i = 0; i < 10; i++) {
-        
-       // $('#myUl').append(`<li>测试</li>`);
+
+        // $('#myUl').append(`<li>测试</li>`);
     }
-    
+
 
     // 抽签
     function getRandomIntInclusive(min, max) {
