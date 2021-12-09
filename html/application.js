@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    
+
     const todolist = [];
-    
-//输入文字、点击按钮、放进表格
-    
+
+    //输入文字、点击按钮、放进表格
+
 
     //点击按钮
     $('#myButton').on('click', () => {
@@ -19,10 +19,10 @@ $(document).ready(function () {
             //页面显示
             $('#myUl').append(`<li>${inputValue}</li>`);
         }
-        
+
     });
 
-    
+
 
     // ajax 请求
     $('#ajaxBtn').on('click', () => {
@@ -38,28 +38,27 @@ $(document).ready(function () {
     });
 
 
-   
-    
+
+
     $('#myInput').on('input', () => {
         console.log($('#myInput').val());
     });
 
     for (let i = 0; i < 10; i++) {
-        
-       // $('#myUl').append(`<li>测试</li>`);
+
+        // $('#myUl').append(`<li>测试</li>`);
     }
-    
+
 
     // 抽签
-    function getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
 
+    function random(x) {
+        return Math.floor(Math.random() * x) + 1; // floor返回比自身小的最大整数，random返回0-1之间的小数   
     }
+    // console.log(random(5));
 
     $('#random').on('click', () => {
-        alert(getRandomIntInclusive(1, 5));
+        alert(random(5)); //结果：返回0-1之间的随机小数*整数x，floor返回1(0+1)~5(0+4)之间的随机整数
     });
 
 
