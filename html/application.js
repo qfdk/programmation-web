@@ -37,6 +37,12 @@ $(document).ready(function () {
         });
     });
 
+    $.get('./data.json').then(response => {
+        console.log(response)
+        for (const element of response) {
+          $('#myUl').append(`<li>${element}</li>`);
+        }
+    });
 
 
 
