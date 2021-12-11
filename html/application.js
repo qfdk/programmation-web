@@ -40,7 +40,7 @@ $(document).ready(function () {
     $.get('./data.json').then(response => {
         console.log(response)
         for (const element of response) {
-          $('#myUl').append(`<li>${element}</li>`);
+            $('#myUl').append(`<li>${element}</li>`);
         }
     });
 
@@ -55,6 +55,20 @@ $(document).ready(function () {
         // $('#myUl').append(`<li>测试</li>`);
     }
 
+    //  请求数组排序
+    $('#sortBtn').on('click', () => {
+        $.get('./sort.json').then(response => {
+            console.log(response)
+
+            const numtable = response.sort((a, b) => a - b)
+            
+            console.log(numtable.join());
+
+            $('#myUl').append(`<li>${numtable.join(':')}</li>`);
+
+
+        });
+    });
 
     // 抽签
 
@@ -100,3 +114,6 @@ $(document).ready(function () {
     // }
     // lancerRequete();
 });
+
+
+
