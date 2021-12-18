@@ -23,12 +23,11 @@ $(document).ready(function () {
     });
 
 
-
     // ajax 请求
     $('#ajaxBtn').on('click', () => {
         $.get('./ajax.json').then(response => {
             // 相当于 readyState===4 && status ===200
-            console.log(response)
+            console.log(response);
             // $('#myUl').append(`${response}`);
 
             for (const data of response) {
@@ -38,13 +37,17 @@ $(document).ready(function () {
     });
 
     $.get('./data.json').then(response => {
-        console.log(response)
+        console.log(response);
         for (const element of response) {
             $('#myUl').append(`<li>${element}</li>`);
         }
     });
 
-
+    // featch
+    fetch('./data.json').then(function (response) {
+        console.log("fetchfetchfetchfetchfetchfetch");
+        console.log(response.json());
+    });
 
     $('#myInput').on('input', () => {
         console.log($('#myInput').val());
@@ -58,10 +61,10 @@ $(document).ready(function () {
     //  请求数组排序
     $('#sortBtn').on('click', () => {
         $.get('./sort.json').then(response => {
-            console.log(response)
+            console.log(response);
 
-            const numtable = response.sort((a, b) => a - b)
-            
+            const numtable = response.sort((a, b) => a - b);
+
             console.log(numtable.join());
 
             $('#myUl').append(`<li>${numtable.join(':')}</li>`);
@@ -73,8 +76,9 @@ $(document).ready(function () {
     // 抽签
 
     function random(x) {
-        return Math.floor(Math.random() * x) + 1; // floor返回比自身小的最大整数，random返回0-1之间的小数   
+        return Math.floor(Math.random() * x) + 1; // floor返回比自身小的最大整数，random返回0-1之间的小数
     }
+
     // console.log(random(5));
 
     $('#random').on('click', () => {
