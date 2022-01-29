@@ -25,4 +25,9 @@ class  Person
     {
         return "My name is : $this->name";
     }
+
+    public function afficher()
+    {
+        echo "person";
+    }
 }

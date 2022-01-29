@@ -25,4 +25,9 @@ class Car
     {
         return "我是车 : $this->name";
     }
+
+    public function afficher()
+    {
+        echo "car";
+    }
 }
