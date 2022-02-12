@@ -1,5 +1,5 @@
 <?php
-require_once "connection.php";
+require_once "./utiles/connection.php";
 function myLogger($data)
 {
     echo "<pre>";
@@ -7,7 +7,7 @@ function myLogger($data)
     echo  "</pre>";
 }
 
-$dbh = db_connection("localhost", "php", "php", "php2*2*");
+$dbh = db_connection("php.qfdk.me", "php", "php", "php2*2*");
 
 $sth = $dbh->prepare("SELECT id, title, content FROM article");
 $sth->execute();
@@ -44,7 +44,7 @@ $sth->execute();
                         <a class="nav-link" href="#">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About me</a>
+                        <a class="nav-link" href="./pages/article/add.php">添加文章</a>
                     </li>
                     <!-- lucky button - js -->
                     <!-- <li class="nav-item">
@@ -75,7 +75,7 @@ $sth->execute();
                             <?php echo $row['id']; ?> : <?php echo $row['title']; ?>
                         </button>
                     </h2>
-                    <div id="collapse<?php echo $row['id']; ?>" class="accordion-collapse collapse show" aria-labelledby="heading<?php echo $row['id']; ?>" data-bs-parent="#accordionExample">
+                    <div id="collapse<?php echo $row['id']; ?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $row['id']; ?>" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <?php echo $row['content']; ?>
                         </div>
