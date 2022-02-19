@@ -44,8 +44,12 @@ $sth->execute();
                         <a class="nav-link" href="#">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/article/add.php">添加文章</a>
+                        <a class="nav-link" href="./pages/article/index.php">添加文章</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/login/index.php">登录</a>
+                    </li>
+
                     <!-- lucky button - js -->
                     <!-- <li class="nav-item">
             <a class="nav-link" id="random" href="#">Lucky button</a>
