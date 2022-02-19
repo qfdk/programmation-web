@@ -47,7 +47,15 @@ $sth->execute();
                         <a class="nav-link" href="./pages/article/index.php">添加文章</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/login/index.php">登录</a>
+                        <?php
+                        session_start();
+
+                        if (isset($_SESSION['login'])) {
+                            echo '<a class="nav-link" href="./pages/logout/index.php">退出</a>';
+                        } else {
+                            echo '<a class="nav-link" href="./pages/login/index.php">登录</a>';
+                        }
+                        ?>
                     </li>
 
                     <!-- lucky button - js -->
