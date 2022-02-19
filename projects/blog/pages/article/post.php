@@ -1,4 +1,5 @@
 <?php
+require_once('../../utiles/security.php');
 require_once('../../utiles/connection.php');
 $dbh = db_connection("php.qfdk.me", "php", "php", "php2*2*");
 
